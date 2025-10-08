@@ -1,0 +1,29 @@
+/* practice qs 1
+
+h2{ 
+    color: orange;
+}
+p{
+    color: white;
+    background-color: black;
+}
+button{
+    color: white;
+    background-color: blue;
+} */
+
+
+
+/* practice qs 2 */
+
+h1{
+    text-align: center;
+    color: #ffa511;
+    text-decoration: underline double teal;
+     font-weight:900 ;
+     letter-spacing: 2px;
+     line-height: 1.5;
+     font-size: 55px;
+     font-family: League spartan;
+     text-transform: uppercase;
+}
