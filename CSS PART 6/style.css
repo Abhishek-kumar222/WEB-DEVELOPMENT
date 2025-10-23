@@ -1,0 +1,42 @@
+#main{
+    /* height: 600px;
+    width: 1200px;
+   background-color:aliceblue ;
+   border: 2px solid black; */
+   margin: 10px auto;
+   display: flex;
+   justify-content: space-evenly;
+}
+
+.cards{
+    width: 350px;
+    height: 450px;
+    border: 2px solid black;
+    border-radius: 10px;
+    
+}
+img{
+    height:200px ;
+    width: 330px;
+    border-radius: 10px;
+    margin: 10px;   
+    border: 1px solid black;
+    /* padding: 10px; */
+    
+}
+h3 ,p {
+    margin: 10px;
+}
+span{
+    color: brown;
+}
+h2{
+    color: orange;
+}
+
+
+@media (max-width:375px){
+    #main{
+        flex-wrap:wrap;
+    }
+}

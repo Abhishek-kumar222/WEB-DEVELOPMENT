@@ -1,0 +1,38 @@
+#smile{
+    background-color: rgb(243, 187, 5);
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+  position: relative;
+}
+#eye1{
+    height: 25px;
+    width: 25px;
+    background-color: black;
+    position: absolute;
+    top: 45px;
+    left:45px;
+    border-radius: 50%;
+
+}
+#eye2{
+    height: 25px;
+    width: 25px;
+    background-color: black;
+    position: absolute;
+    right: 45px;
+    top: 45px;
+    border-radius: 50%;
+
+
+}
+#mouthe{
+    position: absolute;
+    height: 25px;
+    width: 70px;
+    background-color: rgba(240, 76, 51, 0.822);
+    bottom: 50px;
+    left: 65px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
