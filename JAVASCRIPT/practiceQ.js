@@ -10,7 +10,7 @@
 
 //     }
 
-let day="5";
+let day="2";
 
 switch(day){
         case "0":
