@@ -16,3 +16,15 @@
 
 let para = document.querySelector("p");
 console.dir(para);
+
+
+ 
+let heading = document.querySelector('h1');
+
+// heading.innerHTML = `<u>${heading.innerText}</u>`;
+
+
+
+// let anchor = document.querySelectorAll(".box a");
+
+// for (let i=0; i<anchor.length;i++){anchor[i].style.color='yellow'};
