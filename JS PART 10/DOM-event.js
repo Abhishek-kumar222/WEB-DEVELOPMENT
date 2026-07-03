@@ -10,6 +10,10 @@ for (btn of btns) {
     // btn.onmouseenter = function() {
     //     console.log("you entered the button !");
     // }
+
+    ///---event listener---///
+
+    
     // btn.addEventListener("click", sayHello);
     // btn.addEventListener("click", sayName);
     btn.addEventListener("dblclick", function(){

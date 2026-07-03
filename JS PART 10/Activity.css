@@ -1,0 +1,15 @@
+body{
+    text-align: center;
+    /* align-items: center; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    
+
+}
+
+#para{
+    height: 100px;
+    width: 500px;
+    border: 1px solid black;
+    margin: auto;
+}
