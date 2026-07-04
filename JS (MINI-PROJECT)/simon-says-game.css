@@ -1,0 +1,29 @@
+body{
+    text-align: center;
+}
+ #main{
+    justify-content: center;
+    display: flex;
+} 
+.innerDiv{
+    height: 190px;
+    width: 190px;
+    border: 5px solid black;
+    border-radius: 20%;
+    margin: 20px;
+}
+.red{
+    background-color:#d95980;
+}
+.green{
+    background-color: #63aac8;
+}
+.yellow{
+    background-color: #f99b45;
+}
+.purple{
+    background-color: #819ff9;
+}
+.flash{
+    background-color: white;
+}
