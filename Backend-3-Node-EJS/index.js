@@ -11,9 +11,14 @@ app.get("/" , (req , res ) => {
     res.render('home');
 });
 
+app.get("/ig/:username" , (req , res) =>{
+    let  {username} = req.params;
+res.render("instagram.ejs" , {username});
+});
+
 app.get("/hello" , (req , res ) => {
     res.send('hello');
-});
+}); 
 
 app.get("/rolldice" , (req , res ) => {
     let Diceval = Math.floor(Math.random()* 6) + 1;
