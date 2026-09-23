@@ -4,6 +4,9 @@ const path = require("path");
 
 const port = 8080;
 
+// app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "/public/js")));
+app.use(express.static(path.join(__dirname, "/public/css"))); //default path for public 
 app.set("view engine" , "ejs");
 app.set("views" , path.join(__dirname, "/views")); // constant path for views 
 
@@ -12,8 +15,18 @@ app.get("/" , (req , res ) => {
 });
 
 app.get("/ig/:username" , (req , res) =>{
+    const instaData = require("./data.json");
+    console.log(instaData);
+    // const followers = ["adam" , "bob" , "lucky" , "abhi"];
     let  {username} = req.params;
-res.render("instagram.ejs" , {username});
+    let Data = instaData[username];
+    console.log(Data);
+// res.render("instagram.ejs" , {username , followers});
+ if(Data){
+res.render("instagram.ejs" , {Data});
+ }else{
+    res.render("error.ejs");
+ }
 });
 
 app.get("/hello" , (req , res ) => {
