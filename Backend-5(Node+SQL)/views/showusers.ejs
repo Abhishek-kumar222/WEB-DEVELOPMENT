@@ -13,12 +13,21 @@
     </style>
 </head>
 <body>
+  
+     <!-- Add New User Button -->
+    <a href="/user/new">
+        <button>Add New User</button>
+    </a>
+
+    <br><br>
+
     <table>
         <tr>
             <th>Id</th>
             <th>Email</th>
             <th>Username</th>
             <th>Edit</th>
+            <th>Delete</th>
         </tr>   
      <% for(user of users) { %>
       <tr>
@@ -28,6 +37,11 @@
           <td><form   method="GET"  action="/user/<%= user.id %>/edit">
           <button>Edit username</button>
           </form></td>
+          <td>
+          <form method="GET" action="/user/<%= user.id %>/delete">
+         <button>Delete</button>
+         </form>
+         </td>
           
       </tr>
      <% } %>

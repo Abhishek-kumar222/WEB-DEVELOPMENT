@@ -95,7 +95,101 @@ try{
 
 //UPDATE ROUTE
 app.patch("/user/:id" , (req , res) => {
-res.send("updated");
+  let {id} = req.params;
+  let {password: formPass , username: newUsername} = req.body;
+  let q = `SELECT * FROM users WHERE id = '${id}'`;
+try{
+    connection.query(q, (err , result)=>{
+     if(err) throw err;
+     let user = result[0];
+     if(formPass != user.password){
+      res.send("Wrong Password");
+     } else{
+        let q2 = `UPDATE users SET username = '${newUsername}' WHERE id = '${id}'`;
+        connection.query(q2, (err , result) =>{
+          if(err) throw err;
+          res.redirect("/users");
+        });
+     }
+     
+   });
+  }catch(err){
+    console.log(err);
+    res.send("Some error in database");
+  }
+});
+
+
+// Add new user form
+app.get("/user/new", (req, res) => {
+    res.render("add.ejs");
+});
+
+// Add user to database
+app.post("/user", (req, res) => {
+    let { id, username, email, password } = req.body;
+
+    let q = `INSERT INTO users (id, username, email, password)
+             VALUES (?, ?, ?, ?)`;
+
+    connection.query(q, [id, username, email, password], (err, result) => {
+        if (err) {
+            console.log(err);
+            return res.send("Error adding user");
+        }
+
+        res.redirect("/users");
+    });
+});
+
+
+// DELETE USER FORM
+app.get("/user/:id/delete", (req, res) => {
+  let { id } = req.params;
+
+  let q = `SELECT * FROM users WHERE id = '${id}'`;
+
+  connection.query(q, (err, result) => {
+    if (err) throw err;
+
+    let user = result[0];
+
+    if (!user) {
+      return res.send("User not found");
+    }
+
+    res.render("delete.ejs", { user });
+  });
+});
+
+// DELETE ROUTE
+app.delete("/user/:id", (req, res) => {
+  let { id } = req.params;
+  let { email, password } = req.body;
+
+  let q = `SELECT * FROM users WHERE id = '${id}'`;
+
+  connection.query(q, (err, result) => {
+    if (err) throw err;
+
+    let user = result[0];
+
+    if (!user) {
+      return res.send("User not found");
+    }
+
+    if (email !== user.email || password !== user.password) {
+      return res.send("Wrong email or password");
+    }
+
+    let q2 = `DELETE FROM users WHERE id = '${id}'`;
+
+    connection.query(q2, (err, result) => {
+      if (err) throw err;
+
+      res.redirect("/users");
+    });
+  });
 });
 
 app.listen("8080" ,()=>{
