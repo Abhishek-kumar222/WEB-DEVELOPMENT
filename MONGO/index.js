@@ -18,12 +18,17 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("User" , userSchema);
 
-User.updateOne({name: "Rahul"} , {age: 35})
-.then((res) => {
+User.deleteMany({age:{$gt: 50}}).then((res) => {
   console.log(res);
-}).catch((err) => {
- console.log(err);
 });
+
+// User.updateOne({name: "Rahul"} , {age: 35}) // sirf update karega
+// User.findOneAndUpdate({name: "Rahul"} , {age: 55} , {new : true}) // update karke uski value bhi print kaaryega kya update hua h
+// .then((res) => {
+//   console.log(res);
+// }).catch((err) => {
+//  console.log(err);
+// });
 
 
   // User.findOne({age:{$gt: 50}})
