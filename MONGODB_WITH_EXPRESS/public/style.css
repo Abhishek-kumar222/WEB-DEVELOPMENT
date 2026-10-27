@@ -15,3 +15,15 @@ body{
     border-radius: 16px;
 
 }
+#btn{
+    color: white;
+    background-color:dodgerblue ;
+    border-radius: 16px;
+    padding: 15px;
+}
+#Ebtn{
+    color: dodgerblue;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;  
+}
